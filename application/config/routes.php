@@ -57,7 +57,7 @@ $route['api/crud/(:any)'] = 'api/ApiCrud/index/$1';
 
 
 $route['api/employees'] = 'api/Employees/employees';
-$route['api/employees/(:num)'] = 'api/Employees/employees/$1';
+// $route['api/employees/(:num)'] = 'api/Employees/employees/$1';
 
 $route['api/employee/add'] = 'api/Employees/add';
 $route['api/employee/edit/(:any)'] = 'api/Employees/edit/$1';

@@ -1,5 +1,6 @@
 <?php
 require APPPATH . 'libraries/REST_Controller.php';
+
 class Employees extends REST_Controller
 {
     public function __construct()
@@ -8,6 +9,7 @@ class Employees extends REST_Controller
         header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
         header("Access-Control-Allow-Headers: Authorization", "Content-Type");
         header("Content-Type: application/json");
+
         parent::__construct();
         //load database
         $this->load->database();
@@ -15,15 +17,16 @@ class Employees extends REST_Controller
         $this->load->library("Token");
     }
 
-    public function employees_get($id)
-
+    public function employees_get()
     {
         (!$this->token->Check_Token("normal", false));
         header("Content-Type: application/json");
         $input = json_decode(file_get_contents('php://input'), true);
 
 
-        // $id = $this->input->get('id');
+
+
+        $id = $this->input->get('id');
         // $id = 0;
 
         if (!empty($id)) {
